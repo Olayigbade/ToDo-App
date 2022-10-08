@@ -11,9 +11,9 @@ export const handler = middy(
   async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
     const todoId = event.pathParameters.todoId
     
-    const item = await deleteTodo(todoId, getUserId(event))
+    const deleteItem = await deleteTodo(todoId, getUserId(event))
     
-    if(item === null){
+    if(deleteItem === null){
       return {
         statusCode: 404,
         body: JSON.stringify({message: 'Todo not found'})
