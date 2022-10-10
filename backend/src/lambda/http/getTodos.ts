@@ -4,7 +4,7 @@ import * as middy from 'middy'
 import { cors } from 'middy/middlewares'
 import { createLogger } from '../../utils/logger'
 
-import { getTodosForUser } from '../../helpers/todos'
+import { getTodosForUser } from '../../businessLogic/todos'
 import { getUserId } from '../utils';
 
 const logger = createLogger('GetTodosHandler')

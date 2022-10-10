@@ -47,6 +47,10 @@ export class Todos extends React.PureComponent<TodosProps, TodosState> {
   onTodoCreate = async (event: React.ChangeEvent<HTMLButtonElement>) => {
     try {
       const dueDate = this.calculateDueDate()
+      if (this.state.newTodoName === ''){
+        alert('your Todo name is empty');
+        return;
+    }
       const newTodo = await createTodo(this.props.auth.getIdToken(), {
         name: this.state.newTodoName,
         dueDate
@@ -55,6 +59,7 @@ export class Todos extends React.PureComponent<TodosProps, TodosState> {
         todos: [...this.state.todos, newTodo],
         newTodoName: ''
       })
+      
     } catch {
       alert('Todo creation failed')
     }
@@ -100,6 +105,7 @@ export class Todos extends React.PureComponent<TodosProps, TodosState> {
       alert(`Failed to fetch todos: ${(e as Error).message}`)
     }
   }
+  
 
   render() {
     return (
