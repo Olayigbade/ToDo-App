@@ -1,9 +1,7 @@
-import * as AWSXRay from 'aws-xray-sdk'
+import * as AWS from 'aws-sdk'
 import { createLogger } from '../utils/logger'
 
-var AWS = AWSXRay.captureAWS(require('aws-sdk'));
 const logger = createLogger('AttachmentUtils')
-
 
 export class AttachmentUtils {
 
