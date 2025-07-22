@@ -4,7 +4,7 @@
   "description": "Serverless TODO image app",
   "dependencies": {
     "@shelf/aws-ddb-with-xray": "^1.0.0",
-    "@types/axios": "^0.14.0",
+    "@types/axios": "^0.14.4",
     "@types/http-errors": "^1.8.2",
     "aws-xray-sdk": "^2.5.0",
     "aws-xray-sdk-core": "^3.3.8",
